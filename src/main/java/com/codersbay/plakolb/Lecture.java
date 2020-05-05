@@ -22,6 +22,10 @@ public class Lecture {
     //other methods
 
     //getGrade
+    public Integer getGrade () {
+        int average = 0;
+        return average;
+    }
 
     @Override
     public String toString() {
