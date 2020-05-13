@@ -28,9 +28,20 @@ public class Student {
     //other methods
 
     //enroll
+    public void enroll (Lecture lecture) {
+         this.enrolledLectures.add(lecture);
+    }
+
 
     //getSchoolReport
-
+    public void getSchoolReport () {
+        System.out.println("+++++++School Report+++++++");
+        for (Lecture lecture : enrolledLectures) {
+            int grade = lecture.getFinalGrade();
+            String lectureName = lecture.getName();
+            System.out.printf("%s ............... %d\n", lectureName, grade);
+        }
+    }
 
     @Override
     public String toString() {

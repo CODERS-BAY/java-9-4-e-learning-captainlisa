@@ -5,6 +5,7 @@ public class Assignment {
     private String name;
     private Integer maxPoints;
     private Integer pointsReached;
+    private Integer grade;
 
     //Constructor
     public Assignment(String name, Integer maxPoints) {
@@ -25,6 +26,9 @@ public class Assignment {
 
     public void setPointsReached(Integer pointsReached) { this.pointsReached = pointsReached; }
 
+    public Integer getGrade() { return grade; }
+
+    public void setGrade(Integer points) { this.grade = grade(points); }
 
     //isGraded
     public boolean isGraded() {
@@ -36,8 +40,8 @@ public class Assignment {
     }
 
     //grade
-    public int grade(double points) {
-        int graded;
+    public Integer grade(Integer points) {
+        Integer graded;
         if (points > 0 && points <= (this.maxPoints * 0.5)) {
             graded = 5;
         } else if (points > (this.maxPoints * 0.5) && points <= (this.maxPoints * 0.65)) {
@@ -52,6 +56,8 @@ public class Assignment {
             graded = 0;
         }
 
+        this.pointsReached = points;
+        this.grade = graded;
         return graded;
 
     }

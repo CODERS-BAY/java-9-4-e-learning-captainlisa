@@ -19,12 +19,32 @@ public class Lecture {
 
     public ArrayList<Assignment> getListOfAssignments() { return listOfAssignments; }
 
-    //other methods
+    //addAssignment
+    public void addAssignment (Assignment assignment) {
+        this.listOfAssignments.add(assignment);
+    }
 
     //getGrade
-    public Integer getGrade () {
-        int average = 0;
-        return average;
+    public Integer getFinalGrade () {
+        int finalGrade = 0;
+        int grade;
+        double sumOfGrades = 0;
+        ArrayList<Integer> listOfGrades = new ArrayList<>();
+
+        for (Assignment assignment : this.listOfAssignments) {
+            if (assignment.isGraded() == true) {
+                grade = assignment.getGrade();
+                listOfGrades.add(grade);
+            }
+        }
+
+        for (double gradeValue : listOfGrades) {
+            sumOfGrades = sumOfGrades + gradeValue;
+        }
+
+        finalGrade = (int)Math.round(sumOfGrades / listOfGrades.size());
+        return finalGrade;
+
     }
 
     @Override
