@@ -43,7 +43,11 @@ public class Lecture {
         }
 
         finalGrade = (int)Math.round(sumOfGrades / listOfGrades.size());
-        return finalGrade;
+        if (finalGrade == 0) {
+            return null;
+        } else {
+            return finalGrade;
+        }
 
     }
 

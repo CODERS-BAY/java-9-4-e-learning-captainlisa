@@ -50,7 +50,7 @@ public class Assignment {
             graded = 3;
         } else if (points > (this.maxPoints * 0.8) && points <= (this.maxPoints * 0.9)) {
             graded = 2;
-        } else if (points > (this.maxPoints * 0.9) && points <= this.maxPoints) {
+        } else if (points > (this.maxPoints * 0.9)) {
             graded = 1;
         } else {
             graded = 0;
